@@ -1,0 +1,31 @@
+Names:
+Lily Chua
+Zi Shin Chua
+Xing Qian
+
+Files:
+chual_chuaz_qianx_socket.h
+chual_chuaz_qianx_socket.cpp
+chual_chuaz_qianx_blowfish.h
+chual_chuaz_qianx_blowfish.cpp
+chual_chuaz_qianx_blow.h
+chual_chuaz_qianx_blow.cpp
+chual_chuaz_qianx_main.cpp
+makefile
+
+To run the program (must be in this order):
+make main
+at thing0: ./main KDC   
+at thing3: ./main Bob
+at thing1: ./main Alice
+
+Implementation design:
+The blowfish code is from https://www.codeproject.com/Articles/1400/A-C-Implementation-of-the-Blowfish-Encryption-Decr. blow.cpp consists of all the functions that we need to use in main.cpp. Before sending message over the server, we will first send the length of the message to inform the client server to be ready to receive the message. 
+
+Regarding the file encryption and decryption, we encrypt 1024 bytes each time and send it over to the client server and the client server decrypts it and writes into a file.
+
+Issues that we encountered:
+We faced a lot of problems while doing this assignment, especially a few days before the due date because the thingies were down. We also struggled to encrypt and decrypt 1GB file as our code doesn't take in block characters. It only takes in alphanumeric characters. Besides that, we also spent a long time to find the right Blowfish algorithms that suits our assignment. 
+
+Conclusion:
+This version of code will run with files that consists of alphanumeric characters. It will fail if the files are of block characters.
